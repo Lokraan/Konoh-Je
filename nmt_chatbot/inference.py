@@ -56,7 +56,7 @@ def do_start_inference(out_dir, hparams):
 
     # Choose checkpoint (provided with hparams or last one)
     if not flags.ckpt:
-        flags.ckpt = tf.train.latest_checkpoint(flags.out_dir)
+        flags.ckpt = tf.train.latest_checkpoint(out_dir)
 
     # Create model
     if not hparams.attention:

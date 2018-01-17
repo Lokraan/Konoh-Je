@@ -206,7 +206,6 @@ def inference_internal(question):
 def get_best_answer(answers, answers_rate):
     ans_score = {}
     for i, answer in enumerate(answers):
-
         score = scoring.do_scoring(question, answer, answers_rate[i])
         ans_score[answer] = score
 
@@ -228,7 +227,7 @@ if __name__ == "__main__":
     while True:
         question = input("\n> ")
         answers, answers_rate = inference_internal(question)
-        choice_answer = get_best_answer(answers, answer_rate)
+        choice_answer = get_best_answer(answers, answers_rate)
 
         print("{}- {}{}".format(colorama.Fore.GREEN, choice_answer, colorama.Fore.RESET))
         # maybe print the others? Anything else with a matching highscore green, yellow mid-range... red lowest? 
